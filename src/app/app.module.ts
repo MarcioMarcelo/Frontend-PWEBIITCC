@@ -1,3 +1,7 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -33,7 +37,9 @@ registerLocaleData(localePt);
     AppRoutingModule,
     FormsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },

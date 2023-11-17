@@ -1,3 +1,6 @@
+import { Router, RouterModule } from '@angular/router';
+import { ProdutosService } from './../../../services/produtos.service';
+import { IProduto } from './../../model/IProduto.model';
 import { Component, OnInit, NgModule } from '@angular/core';
 
 @Component({
@@ -6,18 +9,24 @@ import { Component, OnInit, NgModule } from '@angular/core';
   styleUrls: ['./cadastrarproduto.component.css']
 })
 export class CadastrarprodutoComponent implements OnInit {
-nome: string = '';
-validade: string = '';
-preco: number = 0;
-  constructor() { }
 
+    produto: IProduto = {
+      nome: '',
+      validade: new Date(),
+      precoProduto: 0
+    }
+  constructor(private produtosService:ProdutosService, private RouterModule: Router) {}
   ngOnInit(): void {}
 
   salvarProduto(): void {
-    console.log('Nome: ', this.nome);
-    console.log('Validade: ', this.validade);
-    console.log('Preço: ', this.preco);
-    alert('Salvo com sucesso!');
-  }
+    this.produtosService.cadastrar(this.produto).subscribe(retorno => {
+      this.produto = retorno;
+      this.produtosService.exibirMensagem(
+        'Sistema',
+        `${this.produto.nome} foi cadastrado com sucesso. ID: ${this.produto.id}`,
+        'toast-success'
+      );
+    });
 
+  }
 }
