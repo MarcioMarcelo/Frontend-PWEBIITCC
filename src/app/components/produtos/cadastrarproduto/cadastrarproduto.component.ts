@@ -26,6 +26,7 @@ export class CadastrarprodutoComponent implements OnInit {
         `${this.produto.nome} foi cadastrado com sucesso. ID: ${this.produto.id}`,
         'toast-success'
       );
+      this.RouterModule.navigate(['/produtos']);
     });
 
   }
