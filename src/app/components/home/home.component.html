@@ -1,24 +1,20 @@
-<h1>Seja bem vindo ao curso de Angular!</h1>
-<h4 class="text-danger">{{ anuncio }}</h4>
+<h1>Crossolutions - CRUD de Semáforos</h1>
+<h4 class="text-danger">Semáforos Cadastrados: </h4>
 <div class="row">
   <div class="col">
-    <app-card-produto
+    <app-card-semaforo
       [foto]="foto"
-      [nomeProduto]="nomeProduto"
-      [promocao]="promocao"
-      [idProduto]="idProduto"
-      [dataValidade]="dataValidade"
-      [precoProduto]="precoProduto"
-    ></app-card-produto>
+      [nomeSemaforo]="nomeSemaforo"
+      [idSemaforo]="idSemaforo"
+      [dataAdicionado]="dataAdicionado"
+    ></app-card-semaforo>
   </div>
   <div class="col">
-    <app-card-produto
-    foto = "https://viagemeturismo.abril.com.br/wp-content/uploads/2016/11/thinkstockphotos-4549879531.jpeg"
-    nomeProduto= "Viagem a Paris"
-    [promocao] = "false"
-    [idProduto]="15"
-    dataValidade="2021-12-31"
-    [precoProduto]="5434.00"
-    ></app-card-produto>
+    <app-card-semaforo
+    foto = "https://img.freepik.com/fotos-premium/foco-seletivo-de-um-semaforo-com-uma-rua-movimentada-ao-fundo_856987-61.jpg"
+    nomeSemaforo= "Semáforo 2"
+    [idSemaforo]="2"
+    dataAdicionado="2017-10-05"
+    ></app-card-semaforo>
   </div>
 </div>

@@ -10,9 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
-import { ListarprodutosComponent } from './components/produtos/listarprodutos/listarprodutos.component';
-import { CadastrarprodutoComponent } from './components/produtos/cadastrarproduto/cadastrarproduto.component';
-import { AtualizarProdutoComponent } from './components/produtos/atualizar-produto/atualizar-produto.component';
+import { ListarsemaforosComponent } from './components/semaforos/listarsemaforos/listarsemaforos.component';
+import { CadastrarsemaforoComponent } from './components/semaforos/cadastrarsemaforo/cadastrarsemaforo.component';
+import { AtualizarSemaforoComponent } from './components/semaforos/atualizar-semaforo/atualizar-semaforo.component';
 
 import { LOCALE_ID } from '@angular/core';
 import localePt from '@angular/common/locales/pt';
@@ -32,9 +32,9 @@ registerLocaleData(localePt);
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ListarprodutosComponent,
-    CadastrarprodutoComponent,
-    AtualizarProdutoComponent
+    ListarsemaforosComponent,
+    CadastrarsemaforoComponent,
+    AtualizarSemaforoComponent
   ],
   imports: [
     BrowserModule,

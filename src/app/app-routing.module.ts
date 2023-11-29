@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CadastrarprodutoComponent } from './components/produtos/cadastrarproduto/cadastrarproduto.component';
-import { ListarprodutosComponent } from './components/produtos/listarprodutos/listarprodutos.component';
+import { CadastrarsemaforoComponent } from './components/semaforos/cadastrarsemaforo/cadastrarsemaforo.component';
+import { ListarsemaforosComponent } from './components/semaforos/listarsemaforos/listarsemaforos.component';
 import { HomeComponent } from './components/home/home.component';
-import { AtualizarProdutoComponent } from './components/produtos/atualizar-produto/atualizar-produto.component';
+import { AtualizarSemaforoComponent } from './components/semaforos/atualizar-semaforo/atualizar-semaforo.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
-  {path:'produtos', component:ListarprodutosComponent},
-  {path:'produtos/cadastrar', component:CadastrarprodutoComponent},
-  {path:'produtos/atualizar/:id', component:AtualizarProdutoComponent},
+  {path:'semaforos', component:ListarsemaforosComponent},
+  {path:'semaforos/cadastrar', component:CadastrarsemaforoComponent},
+  {path:'semaforos/atualizar/:id', component:AtualizarSemaforoComponent},
 ];
 
 @NgModule({

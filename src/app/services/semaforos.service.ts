@@ -1,4 +1,4 @@
-import { IProduto } from './../components/model/IProduto.model';
+import { ISemaforo } from '../components/model/ISemaforo.model';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,39 +11,39 @@ import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 @Injectable({
   providedIn: 'root'
 })
-export class ProdutosService {
-  private URL: string = 'http://localhost:3000/produtos';
+export class SemaforosService {
+  private URL: string = 'http://localhost:3000/semaforos';
 
   constructor(private http: HttpClient, private toastr: ToastrService) { }
-  buscarTodos(): Observable<IProduto[]>{
-    return this.http.get<IProduto[]>(this.URL).pipe(
+  buscarTodos(): Observable<ISemaforo[]>{
+    return this.http.get<ISemaforo[]>(this.URL).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibirErro(erro)));
 
   }
 
-  buscarPorId(id: number): Observable<IProduto> {
-    return this.http.get<IProduto>(`${this.URL}/${id}`).pipe(
+  buscarPorId(id: number): Observable<ISemaforo> {
+    return this.http.get<ISemaforo>(`${this.URL}/${id}`).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibirErro(erro))
     );
   }
 
-  cadastrar(produto: IProduto): Observable<IProduto> {
-    return this.http.post<IProduto>(this.URL, produto).pipe(
+  cadastrar(semaforo: ISemaforo): Observable<ISemaforo> {
+    return this.http.post<ISemaforo>(this.URL, semaforo).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibirErro(erro)));
 
   }
 
-  atualizar(produto: IProduto): Observable<IProduto> {
-    return this.http.put<IProduto>(`${this.URL}/${produto.id}`,produto).pipe(
+  atualizar(semaforo: ISemaforo): Observable<ISemaforo> {
+    return this.http.put<ISemaforo>(`${this.URL}/${semaforo.id}`,semaforo).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibirErro(erro)));
 
   }
 
-  excluir(id: number): Observable<IProduto> {
+  excluir(id: number): Observable<ISemaforo> {
     return this.http.delete<any>(`${this.URL}/${id}`).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibirErro(erro)));

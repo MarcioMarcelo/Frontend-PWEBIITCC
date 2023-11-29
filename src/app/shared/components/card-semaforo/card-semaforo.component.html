@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+  <img [src]="foto" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ nomeSemaforo | uppercase }}
+    </h5>
+    <p class="card-text">Identificação: {{ idSemaforo | number: '2.0-0' }} <br>
+      Adicionado: {{ dataAdicionado | date : "shortDate"}}
+    </p>
+  </div>
+</div>
